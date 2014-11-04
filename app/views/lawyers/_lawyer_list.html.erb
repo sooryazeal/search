@@ -1,0 +1,20 @@
+<div id="lawyer">
+<div class="row1 heading">
+  <div class="col-md-4">Name</div>
+  <div class="col-md-4">City</div>
+  <div class="col-md-4">Years of Experience</div>
+  <div class="col-md-4">Rating</div>
+  <div class="col-md-4"># of Services</div>
+</div>
+<% lawyers.each do |lawyer| %>
+<div class="row1">
+  <div class="col-md-4"><%= lawyer.name %></div>
+  <div class="col-md-4"><%= lawyer.location %></div>
+  <div class="col-md-4"><%= lawyer.experience %></div>
+  <div class="col-md-4"><span class="badge badge-<%= get_lawyer_rating_class(lawyer.rating) %>"><%= lawyer.rating %></span></div>
+  <div class="col-md-4"><%= lawyer.lawyer_services.count %></div>
+</div>
+<% end %>
+<%= will_paginate @lawyers %>
+</div>
+
