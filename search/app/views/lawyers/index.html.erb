@@ -1,0 +1,36 @@
+<div class="img">test</div>
+<div class="text-center">
+<div class="title"> Search Lawyers </div>
+<%= hidden_field_tag 'select_city' %>
+<%= hidden_field_tag 'select_service' %>
+  <%= javascript_tag(<<-eos
+    autocomplete('#{autocomplete_location_lawyers_path}.json',
+                                                   '#select_city',
+                                                   #{[].to_json},
+                                                   'Select city',
+                                                   'city_dropdown',
+                                                   ["Searching",'No Matches']);
+
+  autocomplete('#{autocomplete_services_path}.json',
+                                                   '#select_service',
+                                                   #{[].to_json},
+                                                   'Select service',
+                                                   'service_dropdown',
+                                                   ["Searching",'No Matches']);
+
+  jQuery('#select_city, #select_service').change(function(){
+  	submitAjax(jQuery('#select_city').val(), jQuery('#select_service').val());
+  	});
+  jQuery('img').qtip({
+     content: 'This is an active list element',
+     show: 'mouseover',
+     hide: 'mouseout'
+  });
+  eos
+  ) %>
+
+
+<%= render :partial => "lawyer_list", :locals => { :lawyers => @lawyers } %>
+</div>
+
+

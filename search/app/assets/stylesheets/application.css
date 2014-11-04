@@ -1,0 +1,67 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the top of the
+ * compiled file, but it's generally better to create a new file per style scope.
+ *
+ *= require_self
+ *= require bootstrap_and_overrides
+ *= require_tree
+ *= require select2
+ */
+
+.select2-container, .city_dropdown, .service_dropdown {
+	width: 300px;
+}
+
+.select2-container {
+	margin-top: 20px;
+}
+
+.img {
+	height: 100px; 
+	background-image: url('lawyer.jpg');
+	background-repeat: repeat-x;
+}
+
+.title {
+	font-size: 45px;
+	font-weight: bold;
+	padding: 25px;
+	background-color: #000;
+	color: #FFF;
+}
+
+.heading {
+	font-weight: bold;
+	font-size: 16px;
+}
+
+.heading div {
+		background-color: #000;
+		color: #FFF;
+}
+
+#s2id1 {
+	margin-right: 50px;
+}
+
+.col-md-4 {
+	width: 15%;
+	display: inline-block;
+	border: 1px solid;
+	padding: 10px;
+}
+
+#lawyer {
+	margin-top: 20px;
+}
+
+.pagination em, .pagination span, .pagination a {
+	padding: 10px;
+	font-size: 20px;
+}

@@ -1,0 +1,3 @@
+jQuery('#lawyer').replaceWith('<%= escape_javascript(render :partial => "lawyer_list",
+                                                                                      :locals => {:lawyers => @lawyers}) %>'
+                                                        );
